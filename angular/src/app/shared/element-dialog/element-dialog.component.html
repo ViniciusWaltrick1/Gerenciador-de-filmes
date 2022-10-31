@@ -1,0 +1,33 @@
+<h1 *ngif="!isChange" mat-dialog-title>Criar Filme</h1>
+<h1 *ngif="isChange" mat-dialog-title>Editar Filme</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Numero</mat-label>
+    <input matInput [(ngModel)]="data.posicao">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input matInput [(ngModel)]="data.titulo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>DataLancamento</mat-label>
+    <input matInput [(ngModel)]="data.DataLancamento">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Genero</mat-label>
+    <input matInput [(ngModel)]="data.Genero">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Diretor</mat-label>
+    <input matInput [(ngModel)]="data.Diretor">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Atores</mat-label>
+    <input matInput [(ngModel)]="data.Atores">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button *ngif="!isChange" (click)="onCancel()">Cancel</button>
+  <button mat-button *ngif="isChange" [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Edit</button>
+</div>
